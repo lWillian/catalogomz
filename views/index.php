@@ -28,19 +28,27 @@
 </div>
 <!--FIM CAROUSEL -->
 <!-- MODAL LOGIN -->
-<div class="modal" tabindex="-1" id="teste">
-    <div class="modal-dialog">
+<div class="modal fade" tabindex="-1" role="dialog" id="teste">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Login</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="d-flex col-3" action="model/login.php" method="post">
-                    <input class="form-control me-1 " type="text" placeholder="User" aria-label="User" name="user" required>
-                    <input class="form-control me-1 " type="email" placeholder="Email" aria-label="Email" name="email" required>
-                    <input class="form-control me-1 " type="password" placeholder="Password" aria-label="Password" name="password" required>
-                    <input class="form-control me-1 " type="password" placeholder="Password" aria-label="Password" name="passwordconf" required>
+                <form action=<?php echo DIRPAGE.'controllers/ControllerCadastro'; ?> method="post">
+                    <div class="form-group col-sm-6">
+                        <input class="form-control mb-2 " type="text" placeholder="User" aria-label="User" name="user">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input class="form-control mb-2 " type="email" placeholder="Email" aria-label="Email" name="email" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="password" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="passwordconf" required>
+                    </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-primary" type="submit">Login</button>
