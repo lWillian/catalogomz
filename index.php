@@ -5,3 +5,4 @@ include(DIRREQ."lib/vendor/autoload.php");
 
 $dispatch = new Classes\ClassDispatch();
 include($dispatch->getInclusao());
+

@@ -1,5 +1,4 @@
 <?php \Classes\ClassLayout::setHead('Homepage', 'Essa é a home page do site.', 'menu'); ?>
-
 <!--INICIO CAROUSEL -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -9,13 +8,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="d-block w-100" alt="...">
+            <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="d-block w-100" alt="...">
+            <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="d-block w-100" alt="...">
+            <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="d-block w-100" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -28,73 +27,96 @@
     </button>
 </div>
 <!--FIM CAROUSEL -->
+<!-- MODAL LOGIN -->
+<div class="modal" tabindex="-1" id="teste">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="d-flex col-3" action="model/login.php" method="post">
+                    <input class="form-control me-1 " type="text" placeholder="User" aria-label="User" name="user" required>
+                    <input class="form-control me-1 " type="email" placeholder="Email" aria-label="Email" name="email" required>
+                    <input class="form-control me-1 " type="password" placeholder="Password" aria-label="Password" name="password" required>
+                    <input class="form-control me-1 " type="password" placeholder="Password" aria-label="Password" name="passwordconf" required>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit">Login</button>
+                <a class="btn btn-outline-secondary mx-1 me-2" href="view/cadastrousuario.php">Cadastrar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM MODAL LOGIN -->
 <div class="card-group col-11 m-auto mt-2">
     <div class="card">
-      <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          VEJA MAIS
-        </button>
+        <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                VEJA MAIS
+            </button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="card-img-top" alt="...">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="card-img-top" alt="...">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-              </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-      </div>
+        </div>
     </div>
     <div class="card">
-      <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+        <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
     </div>
     <div class="card">
-      <img src="<?php echo DIRPAGE.'img/Example_image.png';?>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+        <img src="<?php echo DIRPAGE . 'img/Example_image.png'; ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
     </div>
-  </div>
-  <!--FIM CARD -->
-  <hr>
-  <div class="col-11 m-auto">
+</div>
+<!--FIM CARD -->
+<hr>
+<div class="col-11 m-auto">
     <h2 class="text-center">Titulo</h2>
     <p class="text-center">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>
-  </div>
-  <hr>
-  <div class="col-11 m-auto">
+</div>
+<hr>
+<div class="col-11 m-auto">
     <h2 class="text-center">Contato</h2>
     <div class="m-auto" style="width: 150px;">
-      <a href="https://">
-        <i class="fa-brands fa-whatsapp" style="font-size: 150px; color: green;"></i>
-      </a>
-
+        <a href="https://">
+            <i class="fa-brands fa-whatsapp" style="font-size: 150px; color: green;"></i>
+        </a>
     </div>
-  </div>
+</div>
 <?php \Classes\ClassLayout::setFooter(); ?>

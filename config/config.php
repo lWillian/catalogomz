@@ -21,7 +21,7 @@ define('DIRJS',DIRPAGE.'lib/js/');
 #local do banco
 define('HOST', "localhost");
 #nome do banco
-define('DB',"sistema");
+define('DB',"sysmz");
 #usuário 
 define('USER',"root");
 #senha
