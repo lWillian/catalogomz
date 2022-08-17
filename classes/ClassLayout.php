@@ -74,6 +74,8 @@ class ClassLayout
         $html.= "<a href='#'>© 2022 Copyright: Willian Henrique</a>\n";
         $html.= "</div>\n";
         $html.= "</footer>\n";
+        $html.="<script src='".DIRPAGE."lib/js/zepto.min.js'></script>\n";
+        $html.="<script src='".DIRPAGE."lib/js/javascript.js'></script>\n";
         $html.= "<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' crossorigin='anonymous'></script>\n";
         $html.= "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' integrity='sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==' crossorigin='anonymous' referrerpolicy='no-referrer'/>\n";
         $html.= "</body>\n";

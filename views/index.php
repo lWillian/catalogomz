@@ -36,11 +36,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action=<?php echo DIRPAGE.'controllers/ControllerCadastro'; ?> method="post">
+            <div class="retornoCad"></div>
+                <form name="formCadastro" id="formCadastro" action=<?php echo DIRPAGE . 'controllers/ControllerCadastro'; ?> method="post">
+
                     <div class="form-group col-sm-6">
-                        <input class="form-control mb-2 " type="text" placeholder="User" aria-label="User" name="user">
-                    </div>
-                    <div class="form-group col-sm-6">
+                        <input class="form-control mb-2 " type="text" placeholder="User" aria-label="User" name="user" required>
                         <input class="form-control mb-2 " type="email" placeholder="Email" aria-label="Email" name="email" required>
                     </div>
                     <div class="form-group col-sm-6">

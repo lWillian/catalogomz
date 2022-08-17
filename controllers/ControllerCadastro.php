@@ -2,4 +2,7 @@
 $validate = new Classes\ClassValidate();
 $validate->validateFields($_POST);
 $validate->validateEmail($email);
-var_dump($validate->getErro());
+$validate->validateIssetEmail($email);
+$validate->validateConfSenha($senha,$senhaConf);
+$validate->validateStrongSenha($senha);
+echo $validate->validateFinalCad($arrVar);

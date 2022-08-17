@@ -12,7 +12,9 @@
             "email": "sti@mezsantafe.com.br"
         }
     ],
-    "require": {},
+    "require": {
+        "bjeavons/zxcvbn-php": "^1.0"
+    },
     "autoload": {
         "psr-4": {
             "Classes\\": "../classes/",
