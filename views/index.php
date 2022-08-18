@@ -28,32 +28,42 @@
 </div>
 <!--FIM CAROUSEL -->
 <!-- MODAL LOGIN -->
-<div class="modal fade" tabindex="-1" role="dialog" id="teste">
+<div class="modal fade" id="cadModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Login</h5>
+                <h5 class="modal-title">CADASTRAR</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <div class="retornoCad"></div>
-                <form name="formCadastro" id="formCadastro" action=<?php echo DIRPAGE . 'controllers/ControllerCadastro'; ?> method="post">
+                <div class="container-fluid">
+                    <form name="formCadastro" id="formCadastro" method="post" action="<?php echo DIRPAGE . 'controllers/ControllerCadastro'; ?>">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <input class="form-control mb-2 " type="text" placeholder="User" aria-label="User" name="user" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input class="form-control mb-2 " type="email" placeholder="Email" aria-label="Email" name="email" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="password" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="passwordconf" autocomplete="off" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="retornoCad" style="text-align:center;"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">CADASTRAR</button>
+                            <button type="button" class="btn btn-outline-Danger" onclick=limpar() data-bs-dismiss="modal" aria-label="Close">CANCELAR</button>
+                        </div>
+                    </form>
 
-                    <div class="form-group col-sm-6">
-                        <input class="form-control mb-2 " type="text" placeholder="User" aria-label="User" name="user" required>
-                        <input class="form-control mb-2 " type="email" placeholder="Email" aria-label="Email" name="email" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="password" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input class="form-control mb-2 " type="password" placeholder="Password" aria-label="Password" name="passwordconf" required>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">Login</button>
-                <a class="btn btn-outline-secondary mx-1 me-2" href="view/cadastrousuario.php">Cadastrar</a>
-                </form>
+                </div>
             </div>
         </div>
     </div>

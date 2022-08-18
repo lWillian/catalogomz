@@ -17,6 +17,8 @@ class ClassLayout
         $html .= "<title>$title</title>";
         #FAVICON
         $html .= "<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' crossorigin='anonymous'>\n";
+        $html.=" <link rel='stylesheet' href='".DIRPAGE."lib/css/bootstrap/compiler/bootstrap.css'>\n";
+        $html.= "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' integrity='sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==' crossorigin='anonymous' referrerpolicy='no-referrer'/>\n";
         $html .= "</head>\n";
         $html .= "<body>\n";
         echo $html;
@@ -40,7 +42,7 @@ class ClassLayout
         $html .= "<a class='nav-link active' aria-current='page' href='#'>Home</a>";
         $html .= "</li>\n";
         $html .= "<li class='nav-item'> \n";
-        $html .= "<a class='nav-link' data-bs-toggle='modal' data-bs-target='#teste'>Link</a>\n";
+        $html .= "<a class='nav-link' data-bs-toggle='modal' data-bs-target='#cadModal'>Cadastro</a>\n";
         $html .= "  </li>\n";
         // $html .= "<li class=nav-item dropdown>\n";
         // $html .= "<a class=nav-link dropdown-toggle href=# role=button data-bs-toggle=dropdown aria-expanded=false>\n";
@@ -56,7 +58,7 @@ class ClassLayout
         // $html .= " </ul>\n";
         // $html .= " </li>\n";
         $html .= " <li class='nav-item'>\n";
-        $html .= " <a class='nav-link disabled'>Disabled</a>\n";
+        $html .= " <a class='nav-link 'href='".DIRPAGE."views/login'>Login</a>\n";
         $html .= " </li>\n";
         $html .= " </ul>\n";
         $html .= "</div>\n";
@@ -74,10 +76,11 @@ class ClassLayout
         $html.= "<a href='#'>© 2022 Copyright: Willian Henrique</a>\n";
         $html.= "</div>\n";
         $html.= "</footer>\n";
+        $html.="<script src='".DIRPAGE."lib/css/bootstrap/dist/js/bootstrap.js'></script>\n";
         $html.="<script src='".DIRPAGE."lib/js/zepto.min.js'></script>\n";
         $html.="<script src='".DIRPAGE."lib/js/javascript.js'></script>\n";
         $html.= "<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' crossorigin='anonymous'></script>\n";
-        $html.= "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css' integrity='sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==' crossorigin='anonymous' referrerpolicy='no-referrer'/>\n";
+       
         $html.= "</body>\n";
         $html.= "</html>";
         echo $html;
