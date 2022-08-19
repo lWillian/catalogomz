@@ -4,6 +4,7 @@ namespace Classes;
 
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
+use Classes\ClassPassword;
 
 class ClassValidate
 {
@@ -13,6 +14,7 @@ class ClassValidate
     public function __construct()
     {
         $this->cadastro = new ClassCadastro();
+        $this->password = new ClassPassword();
     }
 
     public function validateFields($par)
@@ -90,14 +92,14 @@ class ClassValidate
     }
 
     #Verificação da senha digitada com o hash no banco de dados
-    /* public function validateSenha($email,$senha)
+    public function validateSenha($email, $senha)
     {
-         if ($this->password->verifyHash($email, $senha)){
+        if ($this->password->verifyHash($email, $senha)) {
             return true;
-         }else{
+        } else {
             $this->setErro("Usuário ou senha inválidos");
-         }
-    }*/
+        }
+    }
 
     public function getErro()
     {

@@ -6,6 +6,10 @@ use Models\ClassLogin;
 class ClassPassword{
 
     private $db;
+    public function __construct()
+    {
+        $this->db=new ClassLogin();
+    }
 
     #Criar o hash da senha para salvar no banco de dados
     public function passwordHash($senha)
@@ -19,4 +23,6 @@ class ClassPassword{
 	    $hashDb=$this->db->getDataUser($email);
 	    return password_verify($senha,$hashDb["data"]["senha"]);
 	}
+
+    
 }
