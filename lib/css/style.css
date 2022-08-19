@@ -1,0 +1,16 @@
+
+    .testemenu{
+	height: 10vh;
+}
+
+.conteudo{
+	min-height: calc(100vh - 18vh);
+}
+
+.teste{
+	background-color: #c5c7c7;
+}
+
+.hrstyle{
+	border-top: 1px dashed #080808;
+}
