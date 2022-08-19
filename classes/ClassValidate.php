@@ -5,16 +5,21 @@ namespace Classes;
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
 use Classes\ClassPassword;
+use Models\ClassLogin;
 
 class ClassValidate
 {
     private $erro = [];
     private $cadastro;
+    private $password;
+    private $login;
+    private $tentativas;
 
     public function __construct()
     {
         $this->cadastro = new ClassCadastro();
         $this->password = new ClassPassword();
+        $this->login = new ClassLogin();
     }
 
     public function validateFields($par)
@@ -124,6 +129,41 @@ class ClassValidate
                 "erros" => null
             ];
             $this->cadastro->insertCad($arrVar);
+        }
+        return json_encode($arrResponse);
+    }
+
+    #validação das tentativas
+    public function validateAttemptLogin()
+    {
+        if ($this->login->countAttempt() >= 5) {
+            $this->setErro("Tentativas Excedidas");
+            $this->tentativas = true;
+            return false;
+        } else {
+            $this->tentativas = false;
+            return true;
+        }
+    }
+
+    #validação final de login
+    public function validateFinalLogin($email)
+    {
+        if (count($this->getErro()) > 0) {
+            $this->login->insertAttempt();
+            $arrResponse = [
+                "retorno" => "erro",
+                "erros" => $this->getErro(),
+                "tentativas" => $this->tentativas
+            ];
+        } else {
+            $this->login->deleteAttempt();
+            $this->session->setSessions($email);
+            $arrResponse = [
+                "retorno" => "success",
+                "page" => 'areaRestrita',
+                "tentativas" => $this->tentativas
+            ];
         }
         return json_encode($arrResponse);
     }
