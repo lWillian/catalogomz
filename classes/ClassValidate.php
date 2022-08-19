@@ -14,12 +14,14 @@ class ClassValidate
     private $password;
     private $login;
     private $tentativas;
+    private $session;
 
     public function __construct()
     {
         $this->cadastro = new ClassCadastro();
         $this->password = new ClassPassword();
         $this->login = new ClassLogin();
+        $this->session = new ClassSessions();
     }
 
     public function validateFields($par)
@@ -147,24 +149,33 @@ class ClassValidate
     }
 
     #validação final de login
+    // public function validateFinalLogin($email)
+    // {
+    //     if (count($this->getErro()) > 0) {
+    //         $this->login->insertAttempt();
+    //         $arrResponse = [
+    //             "retorno" => "erro",
+    //             "erros" => $this->getErro(),
+    //             "tentativas" => $this->tentativas
+    //         ];
+    //     } else {
+    //         $this->login->deleteAttempt();
+    //         $this->session->setSessions($email);
+    //         $arrResponse = [
+    //             "retorno" => "success",
+    //             "page" => 'areaRestrita',
+    //             "tentativas" => $this->tentativas
+    //         ];
+    //     }
+    //     return json_encode($arrResponse);
+    // }
     public function validateFinalLogin($email)
     {
-        if (count($this->getErro()) > 0) {
+        if(count($this->getErro())>0){
             $this->login->insertAttempt();
-            $arrResponse = [
-                "retorno" => "erro",
-                "erros" => $this->getErro(),
-                "tentativas" => $this->tentativas
-            ];
-        } else {
+        }else{
             $this->login->deleteAttempt();
-            $this->session->setSessions($email);
-            $arrResponse = [
-                "retorno" => "success",
-                "page" => 'areaRestrita',
-                "tentativas" => $this->tentativas
-            ];
+            return $this->session->setSessions($email);
         }
-        return json_encode($arrResponse);
     }
 }
