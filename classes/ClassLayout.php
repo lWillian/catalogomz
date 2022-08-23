@@ -5,6 +5,11 @@ namespace Classes;
 class ClassLayout
 {
 
+    public static function setHeadRestrito()
+    {
+        $session = new \Classes\ClassSessions();
+        $session->verifyInsideSession();
+    }
     #Setar todas tags html para reaproveitamento de código
     public static function setHead($title, $description, $menu = '', $author = 'Willian Henrique')
     {
@@ -72,44 +77,45 @@ class ClassLayout
         echo $html;
     }*/
 
-    public static function setMenu(){
-        $html ="<nav class='navbar navbar-expand-lg navbar-dark font-weight-bolder bg-gradient-dark'>\n";
-        $html.="<div class='container col-10'>\n";
+    public static function setMenu()
+    {
+        $html = "<nav class='navbar navbar-expand-lg navbar-dark font-weight-bolder bg-gradient-dark'>\n";
+        $html .= "<div class='container col-10'>\n";
         #$html.="<img src='".DIRPAGE."img/logop.png' class=''>\n";
-        $html.="<a class='navbar-brand' href='#'>Navbar</a>\n";
-        $html.="<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSite'>\n";
-        $html.="<span class='navbar-toggler-icon'></span>\n";
-        $html.="</button>\n";
-        $html.="<div class='collapse navbar-collapse' id='navbarSite'>\n";
-        $html.="<ul class='navbar-nav ml-auto menu-lista'>\n";
-        $html.="<li class='nav-item'>\n";
-        $html.="<a href='". DIRPAGE."'"."class='nav-link'>Inicio</a>\n";
-        $html.="</li>\n";
-        $html.="<li class='nav-item'>\n";
-        $html.="<a class='nav-link' data-bs-toggle='modal' data-bs-target='#cadModal'>Cadastro</a>\n";
-        $html.="</li>\n";
-        $html.="<li class='nav-item'>\n";
+        $html .= "<a class='navbar-brand' href='#'>Navbar</a>\n";
+        $html .= "<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSite'>\n";
+        $html .= "<span class='navbar-toggler-icon'></span>\n";
+        $html .= "</button>\n";
+        $html .= "<div class='collapse navbar-collapse' id='navbarSite'>\n";
+        $html .= "<ul class='navbar-nav ml-auto menu-lista'>\n";
+        $html .= "<li class='nav-item'>\n";
+        $html .= "<a href='" . DIRPAGE . "'" . "class='nav-link'>Inicio</a>\n";
+        $html .= "</li>\n";
+        $html .= "<li class='nav-item'>\n";
+        $html .= "<a class='nav-link' data-bs-toggle='modal' data-bs-target='#cadModal'>Cadastro</a>\n";
+        $html .= "</li>\n";
+        $html .= "<li class='nav-item'>\n";
         $html .= " <a class='nav-link 'href='" . DIRPAGE . "views/login'>Login</a>\n";
-        $html.="</li>\n";
-        $html.="<li class='nav-item'>\n";
-        $html.="<a href='#' class='nav-link'>Sobre</a>\n";
-        $html.="</li>\n";
-        $html.="</ul>\n";        
-        $html.="</div>\n";
-        $html.="</div>\n";
-        $html.="</nav>\n";
+        $html .= "</li>\n";
+        $html .= "<li class='nav-item'>\n";
+        $html .= "<a href='#' class='nav-link'>Sobre</a>\n";
+        $html .= "</li>\n";
+        $html .= "</ul>\n";
+        $html .= "</div>\n";
+        $html .= "</div>\n";
+        $html .= "</nav>\n";
         echo $html;
     }
 
     #Setar as tags do footer
     public static function setFooter()
     {
-        $html="<footer class='footer font-weight-bolder text-light bg-gradient-dark testemenu'>\n";
-        $html.="<div class='footer-copyright text-center py-3'>© 2022 Copyright:\n";
-        $html.="<a href='#'>Willian Henrique</a>\n";
-        $html.="</div>\n";
-        $html.="</footer>\n";
-        
+        $html = "<footer class='footer font-weight-bolder text-light bg-gradient-dark testemenu'>\n";
+        $html .= "<div class='footer-copyright text-center py-3'>© 2022 Copyright:\n";
+        $html .= "<a href='#'>Willian Henrique</a>\n";
+        $html .= "</div>\n";
+        $html .= "</footer>\n";
+
         $html .= "<script src='" . DIRPAGE . "lib/css/bootstrap/dist/js/bootstrap.js'></script>\n";
         $html .= "<script src='" . DIRPAGE . "lib/js/zepto.min.js'></script>\n";
         $html .= "<script src='" . DIRPAGE . "lib/js/javascript.js'></script>\n";
