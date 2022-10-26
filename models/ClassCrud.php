@@ -21,6 +21,11 @@ class ClassCrud extends ClassConexao
         return $this->crud;
     }
 
+    public function selectAllDB($fields,$table,$limit,$exec){
+        $this->prepareExecute("select {$fields} from {$table} where grupoid = 63 limit {$limit}", $exec);
+        return $this->crud;
+    }
+
     #Inserção de dados
     public function insertDB($table, $values, $exec)
     {

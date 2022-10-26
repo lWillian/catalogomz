@@ -5,6 +5,7 @@ namespace Classes;
 use Models\ClassCadastro;
 use ZxcvbnPhp\Zxcvbn;
 use Classes\ClassPassword;
+use Models\ClassImage;
 use Models\ClassLogin;
 
 class ClassValidate
@@ -15,6 +16,7 @@ class ClassValidate
     private $login;
     private $tentativas;
     private $session;
+    private $image;
 
     public function __construct()
     {
@@ -22,6 +24,7 @@ class ClassValidate
         $this->password = new ClassPassword();
         $this->login = new ClassLogin();
         $this->session = new ClassSessions();
+        $this->image = new ClassImage();
     }
 
     public function validateFields($par)
@@ -149,33 +152,25 @@ class ClassValidate
     }
 
     #validação final de login
-    // public function validateFinalLogin($email)
-    // {
-    //     if (count($this->getErro()) > 0) {
-    //         $this->login->insertAttempt();
-    //         $arrResponse = [
-    //             "retorno" => "erro",
-    //             "erros" => $this->getErro(),
-    //             "tentativas" => $this->tentativas
-    //         ];
-    //     } else {
-    //         $this->login->deleteAttempt();
-    //         $this->session->setSessions($email);
-    //         $arrResponse = [
-    //             "retorno" => "success",
-    //             "page" => 'areaRestrita',
-    //             "tentativas" => $this->tentativas
-    //         ];
-    //     }
-    //     return json_encode($arrResponse);
-    // }
-    public function validateFinalLogin($email)
-    {
-        if(count($this->getErro())>0){
+    public function validateFinalLogin($email){
+        if(count($this->getErro()) >0){
             $this->login->insertAttempt();
+            $arrResponse=[
+                "retorno"=>"erro",
+                "erros"=>$this->getErro(),
+                "tentativas"=>$this->tentativas
+            ];
         }else{
             $this->login->deleteAttempt();
-            return $this->session->setSessions($email);
+            $this->session->setSessions($email);
+            $arrResponse=[
+                "retorno"=>"success",
+                "page"=>'areaRestrita',
+                "tentativas"=>$this->tentativas
+            ];
+            
         }
+        return json_encode($arrResponse);
     }
+    
 }

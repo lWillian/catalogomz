@@ -78,7 +78,7 @@ class ClassSessions
     public function destructSessions()
     {
         foreach (array_keys($_SESSION) as $key) {
-            unset($_SESSIOn[$key]);
+            unset($_SESSION[$key]);
         }
     }
 

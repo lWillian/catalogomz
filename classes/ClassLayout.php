@@ -13,7 +13,7 @@ class ClassLayout
     #Setar todas tags html para reaproveitamento de código
     public static function setHead($title, $description, $menu = '', $author = 'Willian Henrique')
     {
-        $html = "<!-doctype html>\n";
+        $html = "<!DOCTYPE html>\n";
         $html .= "<html lang='pt-br'>\n";
         $html .= "<head>\n";
         $html .= "<meta name='viewport' content='width=device-width,initial-scale=1'>\n";
@@ -116,8 +116,9 @@ class ClassLayout
         $html .= "</div>\n";
         $html .= "</footer>\n";
 
-        $html .= "<script src='" . DIRPAGE . "lib/css/bootstrap/dist/js/bootstrap.js'></script>\n";
+        #$html .= "<script src='" . DIRPAGE . "lib/css/bootstrap/dist/js/bootstrap.js'></script>\n";
         $html .= "<script src='" . DIRPAGE . "lib/js/zepto.min.js'></script>\n";
+        #$html .= "<script src='" . DIRPAGE . "lib/js/jquery-3.6.1.js'></script>\n";
         $html .= "<script src='" . DIRPAGE . "lib/js/javascript.js'></script>\n";
         $html .= "<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' crossorigin='anonymous'></script>\n";
         $html .= "</body>\n";
@@ -125,3 +126,4 @@ class ClassLayout
         echo $html;
     }
 }
+
