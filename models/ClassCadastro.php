@@ -18,6 +18,19 @@ class ClassCadastro extends ClassCrud
         );
     }
 
+    public function insertImg($arrVar){
+        $this->insertDB(
+            "img",
+            "?,?,?,?",
+            array(
+                0, 
+                $arrVar['descricao'],
+                $arrVar['valor'],
+                $arrVar['imagem']
+            )
+        );
+    }
+
     #Veriricar se já existe o mesmo email cadastro no db
 	public function getIssetEmail($email)
 	{

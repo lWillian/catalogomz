@@ -8,10 +8,10 @@ $img = new \Models\ClassImage();
     <?php foreach ($img->getProductImage() as $key => $value) : ?>
         <div class="col-sm-5 col-md-3">
             <div class="card mb-5">
-                <img src="<?php echo $value['foto']; ?>" width="246px" height="246px;">
+                <img src="<?php echo DIRPAGE. $value['caminho']; ?>" width="246px" height="246px;">
                 <div class="card-body">
-                    <h4 class="card-title"><?php echo $value['nome']; ?></h4>
-                    <h5 class="card-subtitle mb-2 text-muted">R$ <?php echo $value['vendav']; ?></h5>
+                    <h4 class="card-title"><?php echo $value['descricao']; ?></h4>
+                    <h5 class="card-subtitle mb-2 text-muted">R$ <?php echo $value['preco']; ?></h5>
                     <!-- <p class="card-text">Texto de exemplo</p> -->
                 </div>
                 <!-- <ul class="list-group list-group-flush">

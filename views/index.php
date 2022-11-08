@@ -28,7 +28,7 @@
 </div>
 
 <!--FIM CAROUSEL -->
-<!-- MODAL LOGIN -->
+<!-- MODAL CADASTRO -->
 <div class="modal fade" id="cadModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

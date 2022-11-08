@@ -12,7 +12,7 @@ class ClassImage extends ClassCrud
     }
     public function getProductImage()
     {
-        $img = $this->select->selectAllDB("nome,vendav,foto", "material","10", array());
+        $img = $this->select->selectAllDB("*", "img","1000", array());
 
         $retDados = $img->fetchAll();
         return $retDados;

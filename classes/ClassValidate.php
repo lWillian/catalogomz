@@ -172,5 +172,9 @@ class ClassValidate
         }
         return json_encode($arrResponse);
     }
+
+    public function validateUpload(){
+        echo "OK";
+    }
     
 }

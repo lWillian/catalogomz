@@ -22,7 +22,7 @@ class ClassCrud extends ClassConexao
     }
 
     public function selectAllDB($fields,$table,$limit,$exec){
-        $this->prepareExecute("select {$fields} from {$table} where grupoid = 63 limit {$limit}", $exec);
+        $this->prepareExecute("select {$fields} from {$table} limit {$limit}", $exec);
         return $this->crud;
     }
 

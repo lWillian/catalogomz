@@ -14,3 +14,9 @@
 .hrstyle{
 	border-top: 1px dashed #080808;
 }
+
+#alertImg{
+	color:rgb(211, 18, 18);
+	font-size: 15px;
+	
+}
