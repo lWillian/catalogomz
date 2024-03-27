@@ -1,5 +1,5 @@
-<?php #\Classes\ClassLayout::setHeadRestrito();
-#$img = new \Models\ClassImage();
+<?php \Classes\ClassLayout::setHeadRestrito();
+$img = new \Models\ClassImage();
 ?>
 <?php \Classes\ClassLayout::setHead('Cadastrar produto', 'Exclusivo membro', 'menu'); ?>
 

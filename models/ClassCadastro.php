@@ -25,8 +25,8 @@ class ClassCadastro extends ClassCrud
             array(
                 0, 
                 $arrVar['descricao'],
-                $arrVar['valor'],
-                $arrVar['imagem']
+                $arrVar['imagem'],
+                $arrVar['valor']
             )
         );
     }

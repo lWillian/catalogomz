@@ -39,7 +39,7 @@ class ClassSessions
         $_SESSION["login"] = true;
         $_SESSION["time"] = time();
         $_SESSION["id"] = $this->login->getDataUser($email)['data']['id'];
-        $_SESSION["name"] = $this->login->getDataUser($email)['data']['nome'];
+        $_SESSION["name"] = $this->login->getDataUser($email)['data']['user'];
         $_SESSION["email"] = $this->login->getDataUser($email)['data']['email'];
         #$_SESSION["permition"]=$this->login->getDataUser($email)['data']['permissoes'];
         return $_SESSION;
