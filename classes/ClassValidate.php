@@ -24,7 +24,7 @@ class ClassValidate
         $this->password = new ClassPassword();
         $this->login = new ClassLogin();
         $this->session = new ClassSessions();
-       // $this->image = new ClassImage();
+        $this->image = new ClassImage();
     }
 
     public function validateFields($par)

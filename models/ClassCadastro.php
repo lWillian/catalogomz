@@ -11,9 +11,9 @@ class ClassCadastro extends ClassCrud
             "?,?,?,?",
             array(
                 0,
-                $arrVar['user'],
+                $arrVar['nome'],
                 $arrVar['email'],
-                $arrVar['password']
+                $arrVar['senha']
             )
         );
     }

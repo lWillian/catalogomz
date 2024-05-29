@@ -25,7 +25,7 @@ define('DB',"sysmz");
 #usuário 
 define('USER',"root");
 #senha
-define('PASS',"");
+define('PASS',"root");
 
 #pega o host do site
 define("DOMAIN",$_SERVER["HTTP_HOST"]);
